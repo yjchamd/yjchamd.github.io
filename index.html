@@ -96,8 +96,21 @@
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email me at: <a href="mailto:yjchamd@gmail.com">example@example.com</a></p>
+        <p>Email me at: <span id="emailAddress"></span></p>
     </section>
+
+    <script>
+        // 이메일 주소를 동적으로 생성
+        window.onload = function() {
+            const user = 'yjchamd';
+            const domain = 'gmail.com';
+            const emailSpan = document.getElementById('emailAddress');
+            const emailLink = document.createElement('a');
+            emailLink.href = `mailto:${user}@${domain}`;
+            emailLink.textContent = `${user}@${domain}`;
+            emailSpan.appendChild(emailLink);
+        }
+    </script>
     <footer>
         &copy; 2024 Yongjun's webpage
     </footer>
